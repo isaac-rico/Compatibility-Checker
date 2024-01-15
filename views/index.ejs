@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuba Bicycles Compatibility Checker</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.cdnfonts.com/css/campton" rel="stylesheet">
+</head>
+<body>
+    <header class="item" id="header-bg">
+        <div class="yuba-img">
+            <a href="https://www.yubabikes.com"><img src="/yuba-logo.png" alt="yuba logo"></a>
+        </div>
+        <div class="header-title">
+            YUBA COMPATIBILITY CHECKER
+        </div>
+    </header> 
+    <div class="container">
+            <form action="/" method="post">
+                <div class="items" id="models">
+                    <div>
+                        <label for="bike_model">Bike Model:</label>
+                        <select id="bike_model" name="bike_model">
+                            <option value="">Select a bike model</option> 
+                            <option value="Boda V3">Boda V3</option>
+                            <option value="Kombi">Kombi</option>
+                            <option value="Fastrack">Fastrack</option>
+                            <option value="Mundo">Mundo</option>
+                            <option value="Spicy V3">Spicy V3</option>
+                            <option value="Spicy V4">Spicy V4</option>
+                        </select>
+                    </div>  
+                </div>
+                <div class="items" id="accessories">
+                    <div>
+                        <label for="soft_spot_f">Soft Spot (F):</label>
+                        <select id="soft_spot_f" name="soft_spot_f">
+                            <option value="">Please select an accessory</option>
+                            <option value="Small Soft Spot">Small Soft Spot</option>
+                            <option value="Med Soft Spot">Medium Soft Spot</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="soft_spot_r">Soft Spot (R):</label>
+                        <select id="soft_spot_r" name="soft_spot_r">
+                            <option value="">Please select an accessory</option>
+                            <option value="Small Soft Spot">Small Soft Spot</option>
+                            <option value="Med Soft Spot">Medium Soft Spot</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="accessory1">Passenger Handle:</label>
+                        <select id="accessory1" name="accessories">
+                            <option value="">Please select an accessory</option>
+                            <option value="AMB">AMB</option>
+                            <option value="Hold On">Hold On</option>
+                            <option value="Hold On (F)">Hold On (F)</option>
+                            <option value="MB V3 (new!)">MB V3 (new!)</option>
+                            <option value="Ring (F)">Ring (F)</option>
+                        </select>
+                    </div>    
+                    <div>
+                        <label for="accessory2">Child Seat/Passenger Handle:</label>
+                        <select id="accessory2" name="accessories">
+                            <option value="">Please select an accessory</option>
+                            <option value="Yepp">Yepp</option>
+                            <option value="Ring">Ring</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="items" id="accessories">
+                    <div>
+                        <label for="accessory3">Second Child Seat:</label>
+                        <select id="accessory3" name="accessories">
+                            <option value="">Please select an accessory</option>
+                            <option value="Yepp">Yepp</option>
+                            <option value="Ring">Ring</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="accessory4">Bag/DRS:</label>
+                        <select id="accessory4" name="accessories">
+                            <option value="">Please select an accessory</option>
+                            <option value="2-Go">2-Go</option>
+                            <option value="Baguette">Baguette</option>
+                            <option value="Go-Getter">Go-Getter</option>
+                            <option value="DRS">DRS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="accessory5">Pop Top/Canopy</label>
+                        <select id="accessory5" name="accessories">
+                            <option value="">Please select an accessory</option>
+                            <option value="Pop Top">Pop Top</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        <label for="num_passengers">Number of Passengers:</label>
+                        <select type="number" id="num_passengers" name="num_passengers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        <button type="submit">Check Compatibility</button>
+                    </div>
+                </div>
+            </form>
+            <div class="result-text">
+                <p>COMPATIBLE?</p>
+                <p>Y= Yes</p> 
+                <p>Y** = Requires modification or has fitment issues</p>
+                <p>N = Not Compatible</p>
+            </div>      
+            <div id="results">
+                <%= compatibilityInfo %>
+            </div>
+    </div>
+</body>
+</html>

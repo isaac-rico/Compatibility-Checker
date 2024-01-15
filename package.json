@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Compatibility Checker for Yuba Bicycles",
   "main": "app.js",
-  "scripts": {
-    "start": "webpack --config webpack.config.js",
-    "build": "webpack --config webpack.config.js --mode production"
+  "scripts" :
+  {
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

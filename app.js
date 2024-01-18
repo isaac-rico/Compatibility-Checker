@@ -15,7 +15,7 @@ function loadCsvData(filePath) {
     return Papa.parse(csvFile, { header: true, skipEmptyLines: true }).data;
 }
 
-const csvData = loadCsvData('./data/Compatibility Checker Data - Raw Data.csv');
+const csvData = loadCsvData('./Compatibility Checker Data - Raw Data.csv');
 
 app.get('/', (req, res) => {
     res.render('index', { compatibilityInfo: null });

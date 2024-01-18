@@ -22,7 +22,16 @@ const filePath = path.join(process.cwd(),'data', 'Compatibility Checker Data - R
 const csvData = loadCsvData(filePath);
 
 app.get('/', (req, res) => {
-    res.render('index', { compatibilityInfo: null });
+    res.render('index', { compatibilityInfo: null,
+                          bike_model: null,
+                          soft_spot_f: null,
+                          soft_spot_r: null,
+                          accessory1: null,
+                          accessory2: null,
+                          accessory3: null,
+                          accessory4: null,
+                          accessory5: null,
+                          num_passengers: null});
 });
 
 // Route to handle form submission
@@ -53,13 +62,30 @@ app.post('/', (req, res) => {
         selectedConfiguration['No of Passengers'] = numPassengers;
     }
 
-    console.log(selectedConfiguration);
     console.log(bikeModel);
+    console.log(softSpotF);
+    console.log(softSpotR);
+    console.log(accessories[0]);
+    console.log(accessories[1]);
+    console.log(accessories[2]);
+    console.log(accessories[3]);
+    console.log(accessories[4]);
+    console.log(numPassengers);
 
     const compatibilityInfo = getCompatibilityInfo(csvData, selectedConfiguration, bikeModel);
     console.log(compatibilityInfo);
 
-    res.render('index', { compatibilityInfo: compatibilityInfo});
+    res.render('index', { compatibilityInfo: compatibilityInfo,
+                          bike_model: bikeModel,
+                          soft_spot_f: softSpotF,
+                          soft_spot_r: softSpotR,
+                          accessory1: accessories[0],
+                          accessory2: accessories[1],
+                          accessory3: accessories[2],
+                          accessory4: accessories[3],
+                          accessory5: accessories[4],
+                          num_passengers: numPassengers
+                        });
 });
 
 function getCompatibilityInfo(data, selectedConfiguration, bikeModel) {

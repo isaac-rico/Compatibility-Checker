@@ -26,12 +26,12 @@
                         <label for="bike_model">Bike Model:</label>
                         <select id="bike_model" name="bike_model">
                             <option value="">Select a bike model</option> 
-                            <option value="Boda V3">Boda V3</option>
-                            <option value="Kombi">Kombi</option>
-                            <option value="Fastrack">Fastrack</option>
-                            <option value="Mundo">Mundo</option>
-                            <option value="Spicy V3">Spicy V3</option>
-                            <option value="Spicy V4">Spicy V4</option>
+                            <option value="Boda V3"  <% if (bike_model === 'Boda V3') { %>selected<% }%>  >Boda V3</option>
+                            <option value="Kombi"    <% if (bike_model === 'Kombi') { %>selected<% }%>    >Kombi</option>
+                            <option value="Fastrack" <% if (bike_model === 'Fastrack') { %>selected<% }%> >Fastrack</option>
+                            <option value="Mundo"    <% if (bike_model === 'Mundo') { %>selected<% }%>    >Mundo</option>
+                            <option value="Spicy V3" <% if (bike_model === 'Spicy V3') { %>selected<% }%> >Spicy V3</option>
+                            <option value="Spicy V4" <% if (bike_model === 'Spicy V4') { %>selected<% }%> >Spicy V4</option>
                         </select>
                     </div>  
                 </div>
@@ -40,35 +40,35 @@
                         <label for="soft_spot_f">Soft Spot (F):</label>
                         <select id="soft_spot_f" name="soft_spot_f">
                             <option value="">Please select an accessory</option>
-                            <option value="Small Soft Spot">Small Soft Spot</option>
-                            <option value="Med Soft Spot">Medium Soft Spot</option>
+                            <option value="Small Soft Spot" <% if (soft_spot_f === 'Small Soft Spot') { %>selected<% }%> >Small Soft Spot</option>
+                            <option value="Med Soft Spot"   <% if (soft_spot_f === 'Med Soft Spot') { %>selected<% }%>   >Medium Soft Spot</option>
                         </select>
                     </div>
                     <div>
                         <label for="soft_spot_r">Soft Spot (R):</label>
                         <select id="soft_spot_r" name="soft_spot_r">
                             <option value="">Please select an accessory</option>
-                            <option value="Small Soft Spot">Small Soft Spot</option>
-                            <option value="Med Soft Spot">Medium Soft Spot</option>
+                            <option value="Small Soft Spot" <% if (soft_spot_r === 'Small Soft Spot') { %>selected<% }%> >Small Soft Spot</option>
+                            <option value="Med Soft Spot"   <% if (soft_spot_r === 'Med Soft Spot') { %>selected<% }%>   >Medium Soft Spot</option>
                         </select>
                     </div>
                     <div>
                         <label for="accessory1">Passenger Handle:</label>
                         <select id="accessory1" name="accessories">
                             <option value="">Please select an accessory</option>
-                            <option value="AMB">AMB</option>
-                            <option value="Hold On">Hold On</option>
-                            <option value="Hold On (F)">Hold On (F)</option>
-                            <option value="MB V3 (new!)">MB V3 (new!)</option>
-                            <option value="Ring (F)">Ring (F)</option>
+                            <option value="AMB"          <% if (accessory1 === 'AMB') { %>selected<% }%>          >AMB</option>
+                            <option value="Hold On"      <% if (accessory1 === 'Hold On') { %>selected<% }%>      >Hold On</option>
+                            <option value="Hold On (F)"  <% if (accessory1 === 'Hold On (F)') { %>selected<% }%>  >Hold On (F)</option>
+                            <option value="MB V3 (new!)" <% if (accessory1 === 'MB V3 (new!)') { %>selected<% }%> >MB V3 (new!)</option>
+                            <option value="Ring (F)"     <% if (accessory1 === 'Ring (F)') { %>selected<% }%>     >Ring (F)</option>
                         </select>
                     </div>    
                     <div>
                         <label for="accessory2">Child Seat/Passenger Handle:</label>
                         <select id="accessory2" name="accessories">
                             <option value="">Please select an accessory</option>
-                            <option value="Yepp">Yepp</option>
-                            <option value="Ring">Ring</option>
+                            <option value="Yepp" <% if (accessory2 === 'Yepp') { %>selected<% }%> >Yepp</option>
+                            <option value="Ring" <% if (accessory2 === 'Ring') { %>selected<% }%> >Ring</option>
                         </select>
                     </div>
                 </div>
@@ -77,25 +77,25 @@
                         <label for="accessory3">Second Child Seat:</label>
                         <select id="accessory3" name="accessories">
                             <option value="">Please select an accessory</option>
-                            <option value="Yepp">Yepp</option>
-                            <option value="Ring">Ring</option>
+                            <option value="Yepp" <% if (accessory3 === 'Yepp') { %>selected<% }%> >Yepp</option>
+                            <option value="Ring" <% if (accessory3 === 'Ring') { %>selected<% }%> >Ring</option>
                         </select>
                     </div>
                     <div>
                         <label for="accessory4">Bag/DRS:</label>
                         <select id="accessory4" name="accessories">
                             <option value="">Please select an accessory</option>
-                            <option value="2-Go">2-Go</option>
-                            <option value="Baguette">Baguette</option>
-                            <option value="Go-Getter">Go-Getter</option>
-                            <option value="DRS">DRS</option>
+                            <option value="2-Go"      <% if (accessory4 === '2-Go') { %>selected<% }%>      >2-Go</option>
+                            <option value="Baguette"  <% if (accessory4 === 'Baguette') { %>selected<% }%>  >Baguette</option>
+                            <option value="Go-Getter" <% if (accessory4 === 'Go-Getter') { %>selected<% }%> >Go-Getter</option>
+                            <option value="DRS"       <% if (accessory4 === 'DRS') { %>selected<% }%>      >DRS</option>
                         </select>
                     </div>
                     <div>
                         <label for="accessory5">Pop Top/Canopy</label>
                         <select id="accessory5" name="accessories">
                             <option value="">Please select an accessory</option>
-                            <option value="Pop Top">Pop Top</option>
+                            <option value="Pop Top" <% if (accessory5 === 'Pop Top') { %>selected<% }%> >Pop Top</option>
                         </select>
                     </div>
                 </div>
@@ -103,8 +103,8 @@
                     <div>
                         <label for="num_passengers">Number of Passengers:</label>
                         <select type="number" id="num_passengers" name="num_passengers">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="1" <% if (num_passengers === 1 ) { %>selected<% }%> >1</option>
+                            <option value="2" <% if (num_passengers === 2 ) { %>selected<% }%> >2</option>
                         </select>
                     </div>
                 </div>

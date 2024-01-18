@@ -17,6 +17,9 @@
         </div>
     </header> 
     <div class="container">
+        <div id="results">
+            <%= compatibilityInfo %>
+        </div>
             <form action="/" method="post">
                 <div class="items" id="models">
                     <div>
@@ -111,15 +114,7 @@
                     </div>
                 </div>
             </form>
-            <div class="result-text">
-                <p>COMPATIBLE?</p>
-                <p>Y= Yes</p> 
-                <p>Y** = Requires modification or has fitment issues</p>
-                <p>N = Not Compatible</p>
-            </div>      
-            <div id="results">
-                <%= compatibilityInfo %>
-            </div>
+            
     </div>
 </body>
 </html>

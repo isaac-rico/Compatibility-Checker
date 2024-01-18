@@ -66,7 +66,7 @@ function getCompatibilityInfo(data, selectedConfiguration, bikeModel) {
     let filteredData = data.filter(row => {
         return Object.keys(selectedConfiguration).every(key => {
             if (key !== 'No of Passengers') {
-                if (selectedConfiguration[key] === 'NaN') { // Handle NaN values
+                if (selectedConfiguration[key] === 'NaN') { 
                     return row[key] === undefined || row[key] === null || row[key] === '';
                 } else {
                     return selectedConfiguration[key] === row[key];
@@ -81,14 +81,21 @@ function getCompatibilityInfo(data, selectedConfiguration, bikeModel) {
     if (numPassengers === 1) {
         let filteredDataFor2Passengers = filteredData.filter(row => row['No of Passengers'] === '2');
         if (filteredDataFor2Passengers.some(row => row[bikeModel] === 'N')) {
-            return 'Y';
+            return 'Yes, the configuration is possible.';
         }
     }
 
     filteredData = filteredData.filter(row => row['No of Passengers'].toString() === numPassengers.toString());
 
     if (filteredData.length > 0) {
-        return filteredData[0][bikeModel];
+        if (filteredData[0][bikeModel] === 'N') {
+            return 'No, the configuration is not possible.';
+        }
+
+        if (filteredData[0][bikeModel].includes('Y')) {
+            return 'Yes, the configuration is possible.';
+        }
+
     } else {
         return "Configuration not found or not compatible";
     }

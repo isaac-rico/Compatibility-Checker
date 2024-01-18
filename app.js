@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const Papa = require('papaparse');
 const app = express();
+const path = require('path');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
 
 // Function to load and parse CSV data
 function loadCsvData(filePath) {
@@ -15,7 +17,8 @@ function loadCsvData(filePath) {
     return Papa.parse(csvFile, { header: true, skipEmptyLines: true }).data;
 }
 
-const csvData = loadCsvData('./Compatibility Checker Data - Raw Data.csv');
+const filePath = path.join(process.cwd(),'data', 'Compatibility Checker Data - Raw Data.csv');
+const csvData = loadCsvData(filePath);
 
 app.get('/', (req, res) => {
     res.render('index', { compatibilityInfo: null });
